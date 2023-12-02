@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TimeZones</title>
+</head>
+<style>
+    *, *::after, *::before {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: linear-gradient(to right, gold, silver);
+    }
+
+    .box {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        min-height: 100vh;
+        overflow: hidden;
+    }
+
+    .clock {
+        height: 300px;
+        width: 300px;
+        border-radius: 50%;
+        border: 3px solid black;
+        position: relative;
+    }
+
+    .clock .time {
+        --rotation: 0;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transform: rotate(var(--R));
+        /* R = rotation */
+    }
+
+    .a1 {
+        --R: 30deg;
+    }
+    .a2 {
+        --R: 60deg;
+    }
+    .a3 {
+        --R: 90deg;
+    }
+    .a4 {
+        --R: 120deg;
+    }
+    .a5 {
+        --R: 150deg;
+    }
+    .a6 {
+        --R: 180deg;
+    }
+    .a7 {
+        --R: 210deg;
+    }
+    .a8 {
+        --R: 240deg;
+    }
+    .a9 {
+        --R: 270deg;
+    }
+    .a10 {
+        --R: 300deg;
+    }
+    .a11 {
+        --R: 330deg;
+    }
+
+    .clock .hand {
+        --rotation: 0;
+        position: absolute;
+        bottom: 50%;
+        left: 50%;
+        width: 8px;
+        height: 50%;
+        background-color: black;
+        transform-origin: bottom;
+        z-index: 10;
+        transform: translateX(-50%) rotate(var(--rotation));
+    }
+
+    .clock::after {
+        content: '';
+        position: absolute;
+        background-color: black;
+        z-index: 11;
+        width: 15px;
+        height: 15px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+
+    }
+
+    .clock .hand .hour {
+        margin: 0 auto;
+        height: 75px;
+        width: 8px;
+        border: 4px solid black;
+        border-radius: 1px;
+    }
+
+    .clock .hand .minute {
+        margin: 0 auto;
+        height: 135px;
+        width: 5px;
+        border: 3px solid gray;
+        border-radius: 1px;
+    }
+
+    .clock .hand .second {
+        margin: 0 auto;
+        height: 105px;
+        width: 4px;
+        border: 2px solid red;
+        border-radius: 1px;
+    }
+
+</style>
+<body>
+    <div class="box">
+        <div class="clock">
+            <div id="h1" class="hand hour"></div>
+            <div id="m1" class="hand minute"></div>
+            <div id="s1" class="hand second"></div>
+            <div class="time a1">1</div>
+            <div class="time a2">2</div>
+            <div class="time a3">3</div>
+            <div class="time a4">4</div>
+            <div class="time a5">5</div>
+            <div class="time a6">6</div>
+            <div class="time a7">7</div>
+            <div class="time a8">8</div>
+            <div class="time a9">9</div>
+            <div class="time a10">10</div>
+            <div class="time a11">11</div>
+            <div class="time a12">12</div>
+        </div>
+        <div class="clock">
+            <div id="h2" class="hand hour"></div>
+            <div id="m2" class="hand minute"></div>
+            <div id="s2" class="hand second"></div>
+            <div class="time a1">1</div>
+            <div class="time a2">2</div>
+            <div class="time a3">3</div>
+            <div class="time a4">4</div>
+            <div class="time a5">5</div>
+            <div class="time a6">6</div>
+            <div class="time a7">7</div>
+            <div class="time a8">8</div>
+            <div class="time a9">9</div>
+            <div class="time a10">10</div>
+            <div class="time a11">11</div>
+            <div class="time a12">12</div>
+        </div>
+        <div class="clock">
+            <div id="h3" class="hand hour"></div>
+            <div id="m3" class="hand minute"></div>
+            <div id="s3" class="hand second"></div>
+            <div class="time a1">1</div>
+            <div class="time a2">2</div>
+            <div class="time a3">3</div>
+            <div class="time a4">4</div>
+            <div class="time a5">5</div>
+            <div class="time a6">6</div>
+            <div class="time a7">7</div>
+            <div class="time a8">8</div>
+            <div class="time a9">9</div>
+            <div class="time a10">10</div>
+            <div class="time a11">11</div>
+            <div class="time a12">12</div>
+        </div>
+        <div class="clock">
+            <div id="h4" class="hand hour"></div>
+            <div id="m4" class="hand minute"></div>
+            <div id="s4" class="hand second"></div>
+            <div class="time a1">1</div>
+            <div class="time a2">2</div>
+            <div class="time a3">3</div>
+            <div class="time a4">4</div>
+            <div class="time a5">5</div>
+            <div class="time a6">6</div>
+            <div class="time a7">7</div>
+            <div class="time a8">8</div>
+            <div class="time a9">9</div>
+            <div class="time a10">10</div>
+            <div class="time a11">11</div>
+            <div class="time a12">12</div>
+        </div>
+        <div class="search">
+            <div class="Africa"></div>
+            <div class="Afghanistan"></div>
+            <div class="Argentina"></div>
+            <div class="Austria"></div>
+            <div class="Australia"></div>
+            <div class="Belgium"></div>
+            <div class="Brazil"></div>
+            <div class="Canada"></div>
+            <div class="China"></div>
+            <div class="Croatia"></div>
+            <div class="Czechia"></div>
+            <div class="Denmark"></div>
+            <div class="Egypt"></div>
+            <div class="Finland"></div>
+            <div class="France"></div>
+            <div class="Germany"></div>
+            <div class="Greece"></div>
+            <div class="Hungary"></div>
+            <div class="Iceland"></div>
+            <div class="India"></div>
+            <div class="Indonesia"></div>
+            <div class="Ireland"></div>
+            <div class="Italy"></div>
+            <div class="Japan"></div>
+            <div class="Malaysia"></div>
+            <div class="Mexico"></div>
+            <div class="Morocco"></div>
+            <div class="Netherlands"></div>
+            <div class="New Zealand"></div>
+            <div class="North America"></div>
+            <div class="North Korea"></div>
+            <div class="Norway"></div>
+            <div class="Philippines"></div>
+            <div class="Poland"></div>
+            <div class="Portugal"></div>
+            <div class="Russia"></div>
+            <div class="Saudi Arabia"></div>
+            <div class="Singapore"></div>
+            <div class="South America"></div>
+            <div class="South Korea"></div>
+            <div class="Sweden"></div>
+            <div class="Switzerland"></div>
+            <div class="Spain"></div>
+            <div class="Turkiye"></div>
+            <div class="Ukraine"></div>
+            <div class="United States"></div>
+            <div class="United Kingdom"></div>
+            <div class="Vietnam"></div>
+        </div>
+    </div>
+    <button></button>
+</body>
+<script>
+    const H1hand = document.getElementById('h1')
+    const M1hand = document.getElementById('m1')
+    const S1hand = document.getElementById('s1')
+    const H2hand = document.getElementById("Hour2")
+    const M2hand = document.getElementById("Minute2")
+    const S2hand = document.getElementById("Second2")
+    const H3hand = document.getElementById("Hour3")
+    const M3hand = document.getElementById("Minute3")
+    const S3hand = document.getElementById("Second3")
+    const H4hand = document.getElementById("Hour4")
+    const M4hand = document.getElementById("Minute4")
+    const S4hand = document.getElementById("Second4")
+
+    setInterval(clock, 1000);
+
+    function clock(){
+        const currentDate = new Date()
+        const Secondratio = currentDate.getSeconds() / 60
+        const Minuteratio = (Secondratio + currentDate.getMinutes()) / 60
+        const Hourratio = (Minuteratio + currentDate.getHours()) / 60
+
+        SetRotation(H1hand, Secondratio)
+        SetRotation(M1hand, Minuteratio)
+        SetRotation(S1hand, Hourratio)
+    }
+
+    function SetRotation(element, rotationRatio){
+        element.style.setProperty('--rotation', rotationRatio * 360)
+    };
+
+    clock();
+</script>
+</html>

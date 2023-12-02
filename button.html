@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find the Button</title>
+    <script>
+        const easy = 3;
+        const medium = 2;
+        const hard = 1;
+
+        const easyT = 6;
+        const mediumT = 5;
+        const hardT = 4;
+        
+        const MarginSL = (screen.width - 810)/2 - 7;
+        document.addEventListener("DOMContentLoaded", function(){
+            const button = document.getElementById("Look");
+            const circle = document.getElementById("circle");
+            const h1 = document.querySelector("h1");
+            const h3 = document.querySelector("h3");
+
+            const MarginL = 810 - 48 - 28;
+            const MarginT = 540 - 48 - 5;
+
+            button.style.height = 16 * 3 + 'px';
+            button.style.width = 24 * 3 + 'px';
+            button.style.display = "none";
+            button.style.zIndex = "15";
+
+            circle.style.height = 50 * 6 + 'px';
+            circle.style.width = 50 * 6 + 'px';
+            circle.style.border.radius = 50 * 6 / 2 + 'px';
+            circle.style.display = "none";
+            circle.style.zIndex = "5";
+
+            function start(){
+                document.getElementById("start").style.display = "block";
+                button.style.display = "none";
+                button.style.top = '0px';
+                button.style.left = '0px';
+                circle.style.top = '0px';
+                circle.style.left = '0px';
+                circle.style.display = "none";
+                h3.style.display = "none";
+            };
+
+            document.getElementById("1").addEventListener('click', () => {
+                const MarginL = 810 - 48;
+                const MarginT = 540;
+                button.style.height = 16 * 3 + 'px';
+                button.style.width = 24 * 3 + 'px';
+                h1.innerHTML = "Easy";
+                localStorage.setItem("easy", true);
+                localStorage.setItem("medium", false);
+                localStorage.setItem("hard", false);
+                start();
+            });
+
+            document.getElementById("2").addEventListener('click', () => {
+                const MarginL = 810 - 32;
+                const MarginT = 540 - 48;
+                button.style.height = 16 * 2 + 'px';
+                button.style.width = 24 * 2 + 'px';
+                h1.innerHTML = "Medium";
+                localStorage.setItem("easy", false);
+                localStorage.setItem("medium", true);
+                localStorage.setItem("hard", false);
+                start();
+            });
+
+            document.getElementById("3").addEventListener('click', () => {
+                const MarginL = 810 - 16;
+                const MarginT = 540 - 24;
+                button.style.height = 16 + 'px';
+                button.style.width = 24 + 'px';
+                h1.innerHTML = "Hard";
+                localStorage.setItem("easy", false);
+                localStorage.setItem("medium", false);
+                localStorage.setItem("hard", true);
+                start();
+            });
+            
+            document.getElementById("start").addEventListener('click', () => {
+                document.getElementById("start").style.display = "none";
+                // const top = MarginT + 79;
+                // const left = MarginL + MarginSL;
+                const top = Math.floor(Math.random() * MarginT) + 79;
+                const left = Math.floor(Math.random() * MarginL) + MarginSL;
+                button.style.top = top + 'px';
+                button.style.left = left + 'px';
+                button.style.display = "block";
+                circle.style.display = "block";
+                circle.style.top = top + 'px';
+                circle.style.left = left + 'px';
+                h3.style.display = "inline";
+            });
+
+            document.getElementById("circle").addEventListener('mouseover', () => {
+                h3.innerHTML = "WARMER";
+            });
+
+            document.getElementById("circle").addEventListener(!'mouseover', () => {
+                h3.innerHTML = "COLDER";
+            })
+
+            document.getElementById("Look").addEventListener('click', () => {
+                start();
+            });
+        })
+    </script>
+</head>
+<style>
+    * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: conic-gradient(red, blue, cyan, lightgreen, orange, red);
+    }
+
+    nav {
+        border: 3px solid black;
+        border-bottom: none;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin: 0px auto;
+        height: 67px;
+        width: 810px;
+        background-color: aqua;
+    }
+
+    h1 {
+        height: 0px;
+        font-size: 40px;
+        margin-left: 10px;
+        margin-top: 10px;
+    }
+
+    nav > button {
+        background-color: blue;
+        color: red;
+        font-size: 24px;
+    }
+
+    .a {
+        border: 3px solid black;
+    }
+
+    .box {
+        border: 3px solid black;
+        margin: 0px auto;
+        height: 540px;
+        width: 810px;
+        background-color: whitesmoke;
+    }
+
+    .start {
+        margin: 0px auto;
+        height: 535px;
+        width: 805px;
+        font-size: 72px;
+    }
+
+    .hi {
+        position: sticky;
+        background-color: whitesmoke;
+        border: none;
+    }
+
+    .hi:hover {
+        background-color: gray;
+    }
+
+    .circle {
+        position: sticky;
+        background-color: whitesmoke;
+        color: whitesmoke;
+        display: none;
+    }
+
+    a {
+        text-decoration: none;
+        height: 0px;
+        font-size: 40px;
+        margin-left: 10px;
+        margin-top: 10px;
+    }
+
+    h3 {
+        display: none;
+        max-width: 100vw;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
+<body>
+    <h1>Easy</h1>
+    <nav>
+        <button id="1" class="a">Easy</button>
+        <button id="2" class="a">Medium</button>
+        <button id="3" class="a">Hard</button>
+    </nav>
+    <div class="box">
+        <div id="circle" class="circle"></div>
+        <button id="start" class="start">FIND THE BUTTON!!!</button>
+        <button id="Look" class="hi"></button>
+    </div>
+    <a href="index.html">BACK</a>
+    <h3>COLDER</h3>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 0</title>
+</head>
+<style>
+    * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    nav {
+        display: flex;
+        flex: row;
+        justify-content: space-evenly;
+        text-align: center;
+        background-color: red;
+        line-height: 120px;
+        font-weight: bold;
+        height: 120px;
+        text-transform: uppercase;
+        width: 90%;
+        margin: 0px auto;
+        /* background-color: yellow; */
+    }
+
+    a {
+        text-decoration: none;
+        color: black;
+    }
+
+    div.box {
+        background-color: aqua;
+        height: 490px;
+        width: 90%;
+        border: 1px solid black;
+        margin: 0px auto;
+    }
+
+    div.invisible {
+        float: left;
+        height: 460px;
+        width: 460px;
+        display: flex;
+        margin-top: 30px;
+        margin-left: 50px;
+    }
+
+    div.right {
+        float: right;
+    }
+
+    button {
+        background-color: red;
+        font-size: 20px;
+        border: 0;
+        font-weight: bold;
+    }
+
+    h1 {
+        /* font-weight: bold; */
+        font-size: 70px;
+    }
+
+    p {
+        margin-top: 30px;
+        font-size: 24px;
+    }
+
+    div.left a {
+        margin-top: 20px;
+        font-size: 30px;
+    }
+
+    img {
+        height: 480px;
+        width: 480px;
+        margin-top: 5px;
+        margin-right: 5px;
+    }
+</style>
+<body>
+    <header>
+        <nav>
+            <a href="home.html">home</a>
+            <button>PORTFOLIO</button>
+            <a href="about.html">about</a>
+            <a href="button.html">games</a>
+            <!-- <a href="clock.html">timezone</a> -->
+        </nav>
+        <div class="box">
+            <div class="invisible">
+                <div class="left">
+                    <h1>Timotius Bryan Makmur</h1>
+                    <p>Hello, I'm a 15 year old student in Ignatius Global School.</p>
+                    <a href="#">🔎</a>
+                    <a href="#">😎</a>
+                    <a href="#">🔔</a>
+                    <a href="#">☎️</a>
+                </div>
+            </div>
+            <div class="right">
+            <img src="gedungi.webp" alt="gedungigs">
+            </div>
+        </div>  
+    </header>
+</body>
+<script>
+    function clicked(){
+        alert("There's no portfolio yet. I'm 15 years old!");
+        document.querySelector("button").style.display = "none"
+    }
+    
+    document.querySelector("button").onclick = clicked;
+</script>
+</html>

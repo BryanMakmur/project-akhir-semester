@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ignatius Global School</title>
+</head>
+<style>
+    * {
+        margin: 0px auto;
+        padding: 0px;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: darkblue;
+    }
+
+    .box {
+        position: fixed;
+        left: 0px;
+        top: 0px;
+        height: 40px;
+        width: 300vw;
+        background-color: darkgreen;
+        display: flex;
+        align-items: center;
+    }
+        
+    .box > p {
+        background-color: cyan;
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 0px 5px;
+        font-size: 18pt;
+        position: relative;
+        animation: slide 8s infinite;
+        animation-timing-function: linear;
+    }
+
+    @keyframes slide {
+        from {
+            left: 600px;
+        }
+        to {
+            left: -2600px;
+        }
+    }
+
+    header {
+        margin-top: 40px;
+        display: flex;
+        height: 100px;
+        max-width: 150vh;
+        justify-content: space-evenly;
+        align-items: center;
+        background-color: red;
+        border: 5px solid black;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+    }
+
+    div.left {
+        display: flex;
+        width: 50%;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    div.right {
+        display: flex;
+        width: 50%;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    img {
+        height: 80px;
+    }
+
+    .box2 {
+        border: 3px solid black;
+        background: conic-gradient(purple, red, orange, yellow, blue);
+        display: none;
+        height: 60vh;
+        width: 80vw;
+    }
+
+    .box3 {
+        height: 80%;
+        width: 80%;
+    }
+
+    .box3 .p {
+       text-decoration: aqua;
+       font-size: 30px;
+    }
+
+    h1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
+<body>
+    <div class="box">
+        <p>Hello... This is the school I went to. I hope you like what I wrote about it and also the school. Definitely. Absolutely. Bye...</p>
+    </div>
+    <header>
+        <div class="left">
+            <img src="IGS.jpg" alt="logo IGS" class="logo1">
+            <img src="Indonesia.jpg" alt="Logo Indonesia" class="logo2">
+        </div>
+        <div class="right">
+            <button id="1">About</button>
+            <button id="2">Programs</button>
+            <button id="3">Facilities</button>
+        </div>
+    </header>
+    <h1>Please press the navigation above to see what's in store</h1>
+    <div class="box2" id="box2">
+        <div class="box3">
+            <p id="p1">Ignatius Global School is a great school. It has 14 classes for just 10th grade. It's facilities are: a pool, a library, lab computers, chemistry labs, a place to play soccer basketball, badminton, table tennis and all other stuff. The 10th grade are divided into two, in which the first 10 classes are for those who wanted in on IPA(Ilmu Pengetahuan Alam), while the rest 4 classes are for IPS(Ilmu Pengetahuan Sosial).</p>
+        </div>
+    </div>
+</body>
+<script>
+    function click(){
+        alert("Here we go!!!");
+        document.getElementById("box2").style.display = "block";
+    }
+
+    function clicked(){
+        alert("I DO NOT KNOW");
+    }
+
+    document.getElementById("1").onclick = click;
+    
+    document.getElementById("2").onclick = clicked;
+    document.getElementById("3").onclick = clicked;
+</script>
+</html>
